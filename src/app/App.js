@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import { Products } from "./pages/Products";
-import { UserCart } from "./providers/UserCart";
-import { Cart } from "./components/Cart";
+import { Products } from "./pages/Products.page";
+import { UserCart } from "./providers/UserCart.provider";
+import { Cart } from "./components/Cart.component";
 import { useState } from "react";
 
 const queryClient = new QueryClient();

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import { ProductDetails } from "../components/ProductDetails";
+import { ProductDetails } from "../components/ProductDetails.component";
 
 const Products = () => {
     const { isLoading, error, data } = useQuery('furnitureItems', () => {
@@ -12,7 +12,7 @@ const Products = () => {
     if(error) return `An error has occured: ${error}`;
 
     return (
-        <div className="w-full h-full flex">
+        <div className="w-full h-screen flex">
             <aside className="hidden lg:block w-1/4 py-3">
                 <img className="h-full object-cover" src={data ? data.data.data.products[0].imageURLs[0] : ""} alt=""></img>
             </aside>

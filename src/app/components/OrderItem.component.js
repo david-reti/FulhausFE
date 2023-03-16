@@ -1,13 +1,9 @@
 import { FaTrash } from "react-icons/fa";
-import { UserCart } from "../providers/UserCart";
-
-const removeProductFromCart = (cart, product) => {
-    return {items: cart.items.filter(item => item.fulhausProductName !== product.fulhausProductName), 
-            total: cart.total - product.rentalPrice, open: true};
-}
+import { UserCart } from "../providers/UserCart.provider";
+import { removeProductFromCart } from "../util/Cart.util";
 
 // This component displays a single order item - the format of the item is based on the format from the API 
-const OrderItem = ({item}) =>
+const OrderItem = ({item, quantity}) =>
     <UserCart.Consumer>
     {({cart, setCart}) =>
         <article className="flex pt-8">
@@ -25,7 +21,7 @@ const OrderItem = ({item}) =>
                 {/* The price and quantity of the item */}
                 <div className="flex justify-between">
                     <p className="font-serif text-2xl text-gray-400">{`$${item.rentalPrice}`}</p>
-                    <p className="font-serif text-2xl">1x</p>
+                    <p className="font-serif text-2xl">{`${quantity}x`}</p>
                 </div>
             </div>
         </article>

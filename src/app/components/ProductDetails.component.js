@@ -1,10 +1,7 @@
 import { IconContext } from 'react-icons';
 import { FaCartPlus, FaStar } from 'react-icons/fa';
-import { UserCart } from '../providers/UserCart';
-
-const addProductToCart = (cart, product) => {
-    return {items: cart.items.concat([product]), total: cart.total + product.rentalPrice, open: true};
-}
+import { UserCart } from '../providers/UserCart.provider';
+import { addProductToCart } from '../util/Cart.util';
 
 // This component contains an image of the product, as well as its rating, price and ability to add it to cart
 const ProductDetails = ({ product }) =>
