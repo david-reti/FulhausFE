@@ -7,7 +7,7 @@ const addProductToCart = (cart, product) => {
             total: cart.total + product.rentalPrice, open: true};
 }
 
-// Returns an object representing the cart with all instances of the item removed
+// Returns an object representing the cart with all instances of the item removed - if there are multiple items, subtract the correct price
 const removeProductFromCart = (cart, product) => {
     const existing = cart.items.find(item => item.item._id === product._id);
     return {items: cart.items.filter(item => item.item._id !== product._id), 

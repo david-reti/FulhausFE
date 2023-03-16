@@ -1,3 +1,19 @@
+# Fulhaus Technical Assessment - Backend - David Reti
+
+This is the frontend component of my technical assessment for Fulhaus - being a standard react app, the original documentation still applies and I have included it at the bottom of this document. The application has the API URL hardcoded as it's just an MVP and strives to be as close to the original design as possible. 
+
+Except the following changes:
+
+- An icon was added to allow items to be removed from the cart
+- The background image of the items retrieved from the API is white, and the images were not modified
+- The big image on the left is not displayed on smaller screens to save space
+
+The app can be run as follows:
+
+- Clone the repository
+- Install dependencies with `npm i`
+- Run the application: `npm start`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

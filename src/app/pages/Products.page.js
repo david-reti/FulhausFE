@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 import { ProductDetails } from "../components/ProductDetails.component";
+import { FURNITURE_API_URL } from "../config/URLs.config";
 
+// This is the main products page - it automatically retrieves a list of products from the API
+// In a production environment, I would add a nicer loading / error message and I might refactor the loader
 const Products = () => {
     const { isLoading, error, data } = useQuery('furnitureItems', () => {
-        return axios.get('https://fh-api-dev.herokuapp.com/api/products-service/products/website/CAD?page=0&limit=6');
+        return axios.get(FURNITURE_API_URL);
     });
 
     if(isLoading) return "Loading...";
